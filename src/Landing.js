@@ -13,11 +13,14 @@ function Landing({ isAuth, setIsAuth }) {
 
     const signInWithGoogle = () => {
         signInWithPopup(auth, provider).then((result) => {
+            const user = result.user;
+            console.log("User ID:", user.uid);
             setIsAuth(true)
             console.log(result);
             Navigate('/home')
         })
     }
+
     const goMainPage = () => {
         {
             isAuth ? Navigate('/home') : toast.warning("Please Sign Up With Google ");

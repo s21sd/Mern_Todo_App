@@ -16,7 +16,8 @@ body {
 
 .head {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  margin-left: 12px;
   align-items: center;
 }
 
@@ -25,7 +26,7 @@ body {
 }
 
 .heading {
-  text-align: center;
+  text-align: start;
   font-size: 32px;
   -webkit-text-stroke: 1px black;
   color: white;
@@ -36,7 +37,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 50vw;
-  height: 200px;
+  height: 250px;
   border-radius: 12px;
   background-color: #ebeef3;
   box-shadow: -3px -3px 7px #ebeef3,
@@ -48,14 +49,16 @@ body {
   border-radius: 8px;
   border: none;
   outline: none;
-  padding: 4px;
+  font-size: 16px;
+  padding: 10px;
   margin: 12px;
   width: 40vw;
-  font-size: 12px;
+
 }
 
 .form input::placeholder {
   padding-left: 3px;
+  font-weight: bold;
 }
 
 .btns-div {
@@ -67,15 +70,21 @@ body {
 
 .btn {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  width: 150px;
+  font-weight: bold;
+  height: 50px;
+  background: rgb(247, 150, 192);
+  background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
   color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
-  padding: 5px;
+  padding: 10px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -86,14 +95,21 @@ body {
 
 .btn1 {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100px;
+  height: 30px;
+  font-weight: bold;
   margin-left: 10px;
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  background: rgb(247, 150, 192);
+  background: radial-gradient(circle, rgba(247, 150, 192, 1) 0%, rgba(118, 174, 241, 1) 100%);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 20px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -106,7 +122,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60vw;
+  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -115,11 +131,11 @@ body {
   justify-content: center;
   align-items: center;
   line-height: 1;
-  width: 150px;
+  width: 200px;
   height: fit-content;
-  margin: 10px;
+  margin: 20px;
   padding: 8px;
-  font-size: 10px;
+  font-size: 20px;
   border-radius: 12px;
   background-color: #ebeef3;
   box-shadow: -3px -3px 7px #ebeef3,
