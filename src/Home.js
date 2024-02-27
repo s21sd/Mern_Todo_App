@@ -38,7 +38,7 @@ function Home() {
                 method: "DELETE"
             })
             const data = await response.json();
-            // alert(data.message);  // this message is comming from backend
+            alert(data.message);  // this message is comming from backend
             fetchApi();
         } catch (error) {
 
