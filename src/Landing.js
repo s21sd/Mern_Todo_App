@@ -23,7 +23,7 @@ function Landing({ isAuth, setIsAuth }) {
 
     const goMainPage = () => {
         {
-            isAuth ? Navigate('/home') : toast.warning("Please Sign Up With Google ");
+            !isAuth ? Navigate('/home') : toast.warning("Please Sign Up With Google ");
         }
     }
     return (
@@ -31,11 +31,16 @@ function Landing({ isAuth, setIsAuth }) {
             <ToastContainer />
             <div className="headersection">
                 <h1 clas>TODOAPP</h1>
-                {
-                    isAuth ? <></> : <div className="google_div" onClick={signInWithGoogle}>
-                        <FcGoogle size={32} />
-                    </div>
-                }
+                <div className='auth_btns'>
+
+                    {
+                        isAuth ? <></> : <div className="google_div" onClick={signInWithGoogle}>
+                            <FcGoogle size={32} />
+                        </div>
+                    }
+                    <div className=" google_div" onClick={() => Navigate('/login')}><span>Login</span></div>
+                    <div className="google_div" onClick={() => Navigate('/signup')}><span>Sign Up</span></div>
+                </div>
 
             </div>
             <div className="container_second">

@@ -38,7 +38,8 @@ function Home() {
                 method: "DELETE"
             })
             const data = await response.json();
-            alert(data.message);  // this message is comming from backend
+            toast.success(data.message)
+
             fetchApi();
         } catch (error) {
 
@@ -96,8 +97,17 @@ function Home() {
         <div>
             <ToastContainer />
             <div className='head'>
-                <FontAwesomeIcon icon={faBell} className='fa-solid fa-bell fa-bounce fa-2xl' />
-                <h1 className='heading'>TODO APP</h1>
+                <div>
+                    <h1 className='heading'>HII SUNNY</h1>
+                </div>
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <FontAwesomeIcon icon={faBell} className='fa-solid fa-bell fa-bounce fa-2xl' />
+                    <h1 className='heading'>TODO APP</h1>
+                </div>
             </div>
             <div className='main'>
 
