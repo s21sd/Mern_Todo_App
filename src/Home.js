@@ -6,8 +6,6 @@ import { faCheck, faBell } from '@fortawesome/free-solid-svg-icons';
 import { ToastContainer, toast } from 'react-toastify';
 
 function Home() {
-
-
     const api_url = "http://localhost:8000/todoRoutes"
     const [todos, setTodos] = useState([]);
 
