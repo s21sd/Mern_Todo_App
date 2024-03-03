@@ -5,45 +5,63 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
     const Navigate = useNavigate();
     const [apires, setapires] = useState("NO Response");
-    const [login, setLogin] = useState(
-        {
-            email: '',
-            password: '',
+const [login, setLogin] = useState({
+    email: '',
+    password: '',
+});
+
+const apiFetch = () => {
+    fetch("http://localhost:8000/", {
+        method: 'GET',
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error('Network response was not ok');
         }
-    );
-    const apiFetch = () => {
-        fetch("http://localhost:8000/", {
-            method: 'GET',
-        })
-            .then(res => res.json())
-            .then(res => {
-                setapires(res.message);
-            })
+        return res.json();
+    })
+    .then(res => {
+        setapires(res.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+       
+    });
+}
 
-    }
-    const handleLogin = (e) => {
-        e.preventDefault();
-        fetch("http://localhost:8000/auth/login", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(login)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                toast.success('Login Successfull')
-                setTimeout(() => {
-                    Navigate('/home')
-                }, 2000)
-            })
-            .catch(err => console.log(err));
+const handleLogin = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:8000/auth/login", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(login)
+    })
+    .then(res => {
+        if (!res.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return res.json();
+    })
+    .then(data => {
+        console.log(data);
+        toast.success('Login Successful');
+        setTimeout(() => {
+            Navigate('/home');
+        }, 2000);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+       
+    });
+}
 
-    }
-    useEffect(() => {
-        apiFetch();
-    }, [])
+useEffect(() => {
+    apiFetch();
+}, []);
+
     return (
         <div className='login_div'>
             <ToastContainer />

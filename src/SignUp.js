@@ -29,6 +29,7 @@ const Signup = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify(register)
         })
             .then(res => res.json())

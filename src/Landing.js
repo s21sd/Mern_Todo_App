@@ -38,7 +38,10 @@ function Landing({ isAuth, setIsAuth }) {
                             <FcGoogle size={32} />
                         </div>
                     }
-                    <div className=" google_div" onClick={() => Navigate('/login')}><span>Login</span></div>
+                    {
+                        isAuth ? <></> :
+                            <div className=" google_div" onClick={() => Navigate('/login')}><span>Login</span></div>
+                    }
                     <div className="google_div" onClick={() => Navigate('/signup')}><span>Sign Up</span></div>
                 </div>
 
