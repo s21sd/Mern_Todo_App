@@ -10,24 +10,24 @@ const [login, setLogin] = useState({
     password: '',
 });
 
-const apiFetch = () => {
-    fetch("http://localhost:8000/", {
-        method: 'GET',
-    })
-    .then(res => {
-        if (!res.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return res.json();
-    })
-    .then(res => {
-        setapires(res.message);
-    })
-    .catch(error => {
-        console.error('Error:', error);
+// const apiFetch = () => {
+//     fetch("http://localhost:8000/", {
+//         method: 'GET',
+//     })
+//     .then(res => {
+//         if (!res.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         return res.json();
+//     })
+//     .then(res => {
+//         setapires(res.message);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
        
-    });
-}
+//     });
+// }
 
 const handleLogin = (e) => {
     e.preventDefault();
@@ -36,7 +36,6 @@ const handleLogin = (e) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        
         credentials: 'include',
         body: JSON.stringify(login)
     })
@@ -59,9 +58,9 @@ const handleLogin = (e) => {
     });
 }
 
-useEffect(() => {
-    apiFetch();
-}, []);
+// useEffect(() => {
+//     apiFetch();
+// }, []);
 
     return (
         <div className='login_div'>
